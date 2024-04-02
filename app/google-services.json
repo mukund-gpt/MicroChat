@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "576204770642",
+    "project_id": "my-microchat",
+    "storage_bucket": "my-microchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:576204770642:android:6375ae0028db778dc63e8b",
+        "android_client_info": {
+          "package_name": "com.example.microchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBduSKYzY5RKitFtQzAsX-uz8katdP5zXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
