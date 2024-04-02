@@ -3,6 +3,7 @@ package com.example.microchat;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
@@ -40,8 +41,17 @@ public class signinActivity extends AppCompatActivity {
         binding.signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String email = binding.email.getText().toString();
+                String password = binding.password.getText().toString();
+
+                // Check if email or password is empty
+                if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+                    Toast.makeText(signinActivity.this, "Email or password cannot be empty", Toast.LENGTH_SHORT).show();
+                    return; // Exit onClick method if email or password is empty
+                }
+
                 progressDialog.show();
-                auth.signInWithEmailAndPassword(binding.email.getText().toString(),binding.password.getText().toString())
+                auth.signInWithEmailAndPassword(email,password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -50,7 +60,11 @@ public class signinActivity extends AppCompatActivity {
                                     Intent intent=new Intent(signinActivity.this, MainActivity.class);
                                     startActivity(intent);
                                 }else{
-                                    Toast.makeText(signinActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    if (task.getException() != null) {
+                                        Toast.makeText(signinActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(signinActivity.this, "User creation failed", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             }
                         });
