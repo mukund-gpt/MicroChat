@@ -18,6 +18,8 @@ import com.example.microchat.Adapter.FragmentsAdapter;
 import com.example.microchat.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     FirebaseAuth auth;
@@ -33,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         binding.viewPager.setAdapter(new FragmentsAdapter(getSupportFragmentManager()));
         binding.tabLayout.setupWithViewPager(binding.viewPager);
 
-    }
 
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -42,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -55,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, signinActivity.class);
             startActivity(intent);
         }
-
         return true;
     }
 

@@ -23,6 +23,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 public class signinActivity extends AppCompatActivity {
     ActivitySigninBinding binding;
     ProgressDialog progressDialog;
@@ -35,6 +37,7 @@ public class signinActivity extends AppCompatActivity {
 
         binding = ActivitySigninBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        Objects.requireNonNull(getSupportActionBar()).hide();
         
 
         auth = FirebaseAuth.getInstance();

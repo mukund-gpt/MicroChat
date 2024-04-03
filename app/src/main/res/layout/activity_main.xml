@@ -12,10 +12,11 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="#4300C2"
+        android:background="@color/light_purple"
         android:elevation="10dp"
         app:tabIndicator="@color/white"
         app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/white"
         app:tabMaxWidth="0dp"
         app:tabGravity="fill"
         app:tabMode="fixed"/>
