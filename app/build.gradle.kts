@@ -44,7 +44,10 @@ dependencies {
     implementation("com.airbnb.android:lottie:6.4.0")
     implementation(libs.firebase.auth)
     implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
+    implementation("com.google.android.gms:play-services-auth:21.0.0")
     implementation(libs.firebase.database)
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
